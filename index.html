@@ -30,7 +30,7 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
-	  
+
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -76,7 +76,6 @@
       // config.matchWebGLToCanvasSize = false;
 
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-	    //$(window).on("orientationchange", function(event) { location.reload(); });
         // Mobile device style: fill the whole browser client area with the game canvas:
 
         var meta = document.createElement('meta');
@@ -92,13 +91,13 @@
         canvas.style.width = window.innerWidth + 'px';
         canvas.style.height = window.innerHeight + 'px';
 
-        //unityShowBanner('WebGL builds are not supported on mobile devices.');
-      //} else {
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+      } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        //canvas.style.width = "960px";
-        //canvas.style.height = "600px";
-      //}
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
 
       loadingBar.style.display = "block";
 
